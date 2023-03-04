@@ -1,142 +1,49 @@
-<ion-header [translucent]="true">
+<ion-header class="cab">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title>Placar de Truco</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-
-
-
-  <ion-grid>
-    <ion-row>
-      <ion-col size="2.4"><ion-button>1</ion-button></ion-col>
-      <ion-col size="2.4"><ion-button>3</ion-button></ion-col>
-      <ion-col size="2.4"><ion-button>6</ion-button></ion-col>
-      <ion-col size="2.4"><ion-button>9</ion-button></ion-col>
-      <ion-col size="2.4"><ion-button>12</ion-button></ion-col>
-    </ion-row>
-  </ion-grid>
-
-
+<ion-content class="ion-padding">
+  <div class="ion-justify-content-center ion-align-items-center container-coin">
+    <img src="https://blog.bodog.com/wp-content/uploads/2021/10/baralho-frances.jpg" alt="" srcset="">
+    <h1>Truco!</h1>
+  </div>
   <ion-grid>
     <ion-row>
       <ion-col size="6">
-        <ion-card>
-          <ion-card-header>
-            Time 1
-          </ion-card-header>
-          <ion-card-content>
-
-              <ion-button expand="block">+</ion-button>
-
-          </ion-card-content>
-        </ion-card>
+        <h3>Time A</h3>
+        <h2>{{ pontosTimeA }}</h2>
+        <ion-button color="danger" (click)="pontuar(1, 'timeA')">1 ponto</ion-button>
+        <ion-button color="danger" (click)="pontuar(3, 'timeA')">3 pontos</ion-button>
+        <ion-button color="danger" (click)="pontuar(6, 'timeA')">6 pontos</ion-button>
+        <ion-button color="danger" (click)="pontuar(9, 'timeA')">9 pontos</ion-button>
+        <ion-button color="danger" (click)="pontuar(12, 'timeA')">12 pontos</ion-button>
       </ion-col>
+
       <ion-col size="6">
-        <ion-card>
-          <ion-card-header>
-            Time 2
-          </ion-card-header>
-          <ion-card-content>
-
-              <ion-button expand="block">+</ion-button>
-
-          </ion-card-content>
-        </ion-card>
+        <h3>Time B</h3>
+        <h2>{{ pontosTimeB }}</h2>
+        <ion-button color="primary" (click)="pontuar(1, 'timeB')">1 ponto</ion-button>
+        <ion-button color="primary" (click)="pontuar(3, 'timeB')">3 pontos</ion-button>
+        <ion-button color="primary" (click)="pontuar(6, 'timeB')">6 pontos</ion-button>
+        <ion-button color="primary" (click)="pontuar(9, 'timeB')">9 pontos</ion-button>
+        <ion-button color="primary" (click)="pontuar(12, 'timeB')">12 pontos</ion-button>
       </ion-col>
     </ion-row>
-  </ion-grid>
-
-  <ion-grid>
     <ion-row>
-      <ion-col size="6">
-        <ion-card>
-          <ion-card-header>
-            Potuação
-          </ion-card-header>
-          <ion-card-content>
-            <ion-item>
-              <ion-label>Pontos:</ion-label>
-              <ion-input></ion-input>
-            </ion-item>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col size="6">
-        <ion-card>
-          <ion-card-header>
-            Pontuação
-          </ion-card-header>
-          <ion-card-content>
-            <ion-item>
-              <ion-label>Pontos:</ion-label>
-              <ion-input></ion-input>
-            </ion-item>
-          </ion-card-content>
-        </ion-card>
+      <ion-col>
+        <ion-button color="warning" shape="round" expand="full"(click)="resetar()">Resetar</ion-button>
       </ion-col>
     </ion-row>
-  </ion-grid>
-
-  <ion-grid>
     <ion-row>
       <ion-col size="6">
-        <ion-card>
-          <ion-card-content>
-
-              <ion-button expand="block" color="danger">-</ion-button>
-
-          </ion-card-content>
-        </ion-card>
+        <h3>Time A venceu:</h3>
+        <h2>{{ vitoriasTimeA }}</h2>
       </ion-col>
       <ion-col size="6">
-        <ion-card>
-          <ion-card-content>
-
-              <ion-button expand="block" color="danger">-</ion-button>
-
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-  <ion-button expand="block">Zerar</ion-button>
-
-  <ion-grid>
-    <ion-row>
-      <ion-label>Partidas </ion-label>
-    </ion-row>
-  </ion-grid>
-
-
-  <ion-grid>
-    <ion-row>
-      <ion-col size="6">
-        <ion-label>Time 1</ion-label>
-      </ion-col>
-      <ion-col size="6">
-        <ion-item fill="outline">
-          <ion-label position="floating">Total</ion-label>
-          <ion-input placeholder="0"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-  <ion-grid>
-    <ion-row>
-      <ion-col size="6">
-        <ion-label>Time 2</ion-label>
-      </ion-col>
-      <ion-col size="6">
-        <ion-item fill="outline">
-          <ion-label position="floating">Total</ion-label>
-          <ion-input placeholder="0"></ion-input>
-        </ion-item>
+        <h3>Time B venceu:</h3>
+        <h2>{{ vitoriasTimeB }}</h2>
       </ion-col>
     </ion-row>
   </ion-grid>
