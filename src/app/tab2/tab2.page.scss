@@ -1,0 +1,36 @@
+ion-content{
+  --background: #69bb7b;
+}
+
+ion-card-header.ios {
+  display: flex;
+  flex-flow: column-reverse;
+}
+.background{
+  height: 100%;
+  width: 100%;
+  background: url("https://blog.megajogos.com.br/wp-content/uploads/2020/01/guia-definitivo-de-trucologos-dos-trucos_original.png") ;
+  background-size: cover;
+  filter: grayscale(100%);
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.container{
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.texto{
+  text-align: center;
+  color: black;
+}
+
+.backCard{
+  background-color: #0C9425;
+}

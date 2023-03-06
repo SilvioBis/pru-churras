@@ -1,50 +1,76 @@
-<ion-header class="cab">
+<ion-header >
   <ion-toolbar>
     <ion-title>Placar de Truco</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <div class="ion-justify-content-center ion-align-items-center container-coin">
-    <img src="https://blog.bodog.com/wp-content/uploads/2021/10/baralho-frances.jpg" alt="" srcset="">
-    <h1>Truco!</h1>
-  </div>
+<ion-content class="ion-padding" >
+  <div class="background"></div>
+  <div class="container">
   <ion-grid>
     <ion-row>
       <ion-col size="6">
-        <h3>Time A</h3>
-        <h2>{{ pontosTimeA }}</h2>
-        <ion-button color="danger" (click)="pontuar(1, 'timeA')">1 ponto</ion-button>
-        <ion-button color="danger" (click)="pontuar(3, 'timeA')">3 pontos</ion-button>
-        <ion-button color="danger" (click)="pontuar(6, 'timeA')">6 pontos</ion-button>
-        <ion-button color="danger" (click)="pontuar(9, 'timeA')">9 pontos</ion-button>
-        <ion-button color="danger" (click)="pontuar(12, 'timeA')">12 pontos</ion-button>
+
+        <ion-card class="backCard">
+          <ion-card-header>
+            <ion-card-title><h3 class="texto">Time A</h3></ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <h1 class="texto">{{ pontosTimeA }}</h1>
+          </ion-card-content>
+        </ion-card>
+
+
+
+
+        <ion-button color="danger" expand="full" (click)="pontuar(1, 'timeA')">1 ponto</ion-button>
+        <ion-button color="danger" expand="full" (click)="pontuar(3, 'timeA')">3 pontos</ion-button>
+        <ion-button color="danger" expand="full" (click)="pontuar(6, 'timeA')">6 pontos</ion-button>
+        <ion-button color="danger" expand="full" (click)="pontuar(9, 'timeA')">9 pontos</ion-button>
+        <ion-button color="danger" expand="full" (click)="pontuar(12, 'timeA')">12 pontos</ion-button>
       </ion-col>
 
       <ion-col size="6">
-        <h3>Time B</h3>
-        <h2>{{ pontosTimeB }}</h2>
-        <ion-button color="primary" (click)="pontuar(1, 'timeB')">1 ponto</ion-button>
-        <ion-button color="primary" (click)="pontuar(3, 'timeB')">3 pontos</ion-button>
-        <ion-button color="primary" (click)="pontuar(6, 'timeB')">6 pontos</ion-button>
-        <ion-button color="primary" (click)="pontuar(9, 'timeB')">9 pontos</ion-button>
-        <ion-button color="primary" (click)="pontuar(12, 'timeB')">12 pontos</ion-button>
+
+        <ion-card class="backCard">
+          <ion-card-header>
+            <ion-card-title><h3 class="texto">Time B</h3></ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <h1 class="texto">{{ pontosTimeB }}</h1>
+          </ion-card-content>
+        </ion-card>
+
+
+        <ion-button color="primary" expand="full"(click)="pontuar(1, 'timeB')">1 ponto</ion-button>
+        <ion-button color="primary" expand="full"(click)="pontuar(3, 'timeB')">3 pontos</ion-button>
+        <ion-button color="primary" expand="full" (click)="pontuar(6, 'timeB')">6 pontos</ion-button>
+        <ion-button color="primary" expand="full" (click)="pontuar(9, 'timeB')">9 pontos</ion-button>
+        <ion-button color="primary" expand="full" (click)="pontuar(12, 'timeB')">12 pontos</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-button color="warning" shape="round" expand="full"(click)="resetar()">Resetar</ion-button>
+        <ion-button color="dark" expand="full"(click)="resetar()">Resetar</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="6">
-        <h3>Time A venceu:</h3>
-        <h2>{{ vitoriasTimeA }}</h2>
+        <h3 class="texto">Time A venceu:</h3>
+        <h2 class="texto">{{ vitoriasTimeA }}</h2>
       </ion-col>
       <ion-col size="6">
-        <h3>Time B venceu:</h3>
-        <h2>{{ vitoriasTimeB }}</h2>
+        <h3 class="texto">Time B venceu:</h3>
+        <h2 class="texto">{{ vitoriasTimeB }}</h2>
       </ion-col>
     </ion-row>
   </ion-grid>
+
+    <ion-button color="dark" expand="full"(click)="zerarVitorias()">Zerar Vitórias</ion-button>
+    <br/>
+    <br/>
+
+  </div>
 </ion-content>

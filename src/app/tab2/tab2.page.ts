@@ -34,4 +34,9 @@ export class Tab2Page {
     this.pontosTimeB = 0;
 
   }
+
+  zerarVitorias(){
+    this.vitoriasTimeA = 0;
+    this.vitoriasTimeB = 0;
+  }
 }
